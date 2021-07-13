@@ -83,7 +83,7 @@ def split_text():
     numType = int(input("\t>> "))
 
     print(Fore.RED+"\n\t["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Ex: [ admin;pa213ss;sada@gmail.com ]") 
-    print(Fore.RED+"\t["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+"       [   0  ;   1   ;       2      ] Choose number (ex: 0): ")
+    print(Fore.RED+"\t["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+  "     [   0  ;   1   ;       2       ] Choose number (ex: 0): ")
     num = int(input("\t>> "))
     
     inputType = typeSplit(numType)
