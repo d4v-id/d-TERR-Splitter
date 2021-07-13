@@ -7,7 +7,7 @@ Fitur/Features:
 - Split (; : , | #) Character
 - Checker File Words,Sentences,lines
 
-<img src="images/D-TERR.jpg">
+<img src="images/d-TERR(0).jpg">
 
 # Install
 Linux **$**
@@ -33,14 +33,12 @@ Windows **C:>**
 Split Character [ ; , :]
 
 
-<img src="images/D-TERR(2).jpg">
+<img src="images/d-TERR(1).jpg">
 
 
 Split Lines
 
-<img src="images/D-TERR(3).jpg">
+<img src="images/d-TERR(2).jpg">
 
 # Support/Contact
-https://saweria.co/vedd (Donasi/Donate)
-
 d4vbusiness@gmail.com (Gmail)
