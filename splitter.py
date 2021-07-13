@@ -100,7 +100,7 @@ def split_text():
 
 ##core##
 print(Fore.GREEN+"\n//"+Style.RESET_ALL+Fore.RED+" D-TERR by d4v.id"+Style.RESET_ALL)
-type_tools = ["File Checker", "Splitter Text(: , ;)", "Splitter Lines"]
+type_tools = ["File Checker", "Splitter Text(: , ; | #)", "Splitter Lines"]
 print(Fore.GREEN+"//"+Style.RESET_ALL+Fore.RED+" Multiple For Splitter"+Style.RESET_ALL)
 try:
     print(Fore.RED+"["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Choose Methode: ")
