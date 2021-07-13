@@ -10,27 +10,17 @@ Fitur/Features:
 <img src="images/d-TERR(0).jpg">
 
 # Install
-Linux **$**
+Pip **$**
 ```bash
- git clone https://github.com/d4v-id/D-TERR-Splitter
  pip install colorama
  pip install tqdm
 ```
-Windows **C:>**
-
-> Download ZIP > Ekstrak > go to folder
 
 # Run
-(Linux) Run **$**
-```bash
- python3 Splitter.py
-```
-(Windows) Run **C:>**
-```bash
- python Splitter.py
-```
+Python3 (Version)
+
 # Images
-Split Character [ ; , :]
+Split Character (; : , | #)
 
 
 <img src="images/d-TERR(1).jpg">
