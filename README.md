@@ -10,25 +10,22 @@ Fitur/Features:
 <img src="images/d-TERR(0).jpg">
 
 # Install
-Pip **$**
-```bash
- pip install colorama
- pip install tqdm
-```
-
-# Run
 Python3 (Version)
+```bash
+ $ python -m pip install colorama
+ $ python -m pip install tqdm
+```
 
 # Images
 Split Character (; : , | #)
 
 
-<img src="images/d-TERR(1).jpg">
+<img src="dterr-1.png">
 
 
 Split Lines
 
-<img src="images/d-TERR(2).jpg">
+<img src="dterr-2.png">
 
 # Support/Contact
 d4vbusiness@gmail.com (Gmail)
