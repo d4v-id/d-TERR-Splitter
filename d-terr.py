@@ -1,41 +1,61 @@
 
 # by d4v.id
 from tqdm import tqdm
+import sys
 from colorama import Fore,Style
+import os
+
+
+bl = Fore.BLUE
+wh = Fore.WHITE
+gr = Fore.GREEN
+red = Fore.RED
+res = Style.RESET_ALL
+yl = Fore.YELLOW
+
 def ket_file(ket):
     words = 0
     with open(ket, "r") as kata_file:
         for line in kata_file:
-            num_kata = line.split(";"or","or":"or" ")
+            num_kata = line.split(";"or","or":"or".")
             words += len(num_kata)
 
         return str(words)
 
 
 def split_line():
-    print(Fore.RED+"\n["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Enter Filename (ex: daftar.txt):")
-    nama = str(input(">> "))
+    os.system("cls")
+    print(f"{gr}\n//{res}{yl} D-TERR by d4v.id{res}")
+    print(f"{gr}//{res}{yl} Splitter Lines {res}")
+
+    #File Input
+    print(f"{red}\n[{res}?{red}]{res} Enter Filename (.txt):")
+    nama = str(input(f"{gr}>>{res} "))
+
     nama_file = open(nama, "r")
     read_file = nama_file.read()
-    print("\n\tFile: "+Fore.GREEN+"{}".format(nama)+Style.RESET_ALL)
-    print("\tLines: "+Fore.GREEN+"{}".format(all_line(nama))+Style.RESET_ALL)
+    print("\nFile: {}".format(nama))
+    print("Lines: {}".format(all_line(nama)))
     lines = read_file.split()
-    print(Fore.RED+"\t["+Style.RESET_ALL+"#"+Fore.RED+"]"+Style.RESET_ALL+" Splitter Lines "+Fore.RED+"(contoh:34000-end)"+Style.RESET_ALL)
-    print(Fore.RED+"\t["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Enter Number To Split (ex: 55):")
-    num = int(input("\t>> "))
-    print("Processing: "+Fore.GREEN+"{} - {} list".format(int(all_line(nama)), num)+Style.RESET_ALL)
-    print("Result: "+Fore.GREEN+"{} copyied".format(int(all_line(nama)) - num)+Style.RESET_ALL)
+    print(f"{red}[{res}#{red}]{res} Splitter Lines({yl}Ex: 34000 - end{res})")
+    print(f"{red}[{res}?{red}]{res} Enter Number To Split ({yl}Ex: 34000{res}):")
+    num = int(input(f"{gr}>>{res} "))
+    print(f"{red}\n[{res}?{red}]{res} Enter Output Filename (.txt):")
+    outFile = str(input(f"{gr}>>{res} "))
+
+    print("\n\nProcessing: {} - {} lines".format(int(all_line(nama)), num))
+    print("Result: {} copyied".format(int(all_line(nama)) - num))
     
     if int(all_line(nama)) - num < 0:
-        print(Fore.RED+"Failed Input"+Style.RESET_ALL)
+        print(f"{red}Failed Input{res}")
         exit()
 
     num_line = lines[(num-1):]
-    with open("hasil-line.txt","w") as nama_file:
+    with open(outFile,"w") as nama_file:
         for all_in in tqdm(num_line):
             nama_file.write("{}\n".format(all_in))
-
-        print(Fore.GREEN+" SUCCESS SAVE "+Style.RESET_ALL+"["+Fore.GREEN+"hasil-line.txt"+Style.RESET_ALL+"]")
+ 
+        print(f"{gr} SUCCESS SAVE {res}[{gr}{outFile}{res}]")
 
 
 def all_line(file_line):
@@ -60,52 +80,66 @@ def typeSplit(sign):
     elif sign == 5:
         split = "#"
     else:
-        print(Fore.RED+"Wrong input..")
+        print(f"{red}Wrong input..")
 
     return str(split)
 
 
 def name_file():
-    print(Fore.RED+"\n["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Enter Filename (ex: daftar.txt):")
-    nama = str(input(">> "))
+    print(f"{red}\n[{res}?{red}]{res} Enter Filename (.txt) >")
+    nama = str(input(f"{gr}>>{res} "))
     print("File: {}\nLine: {}\nWords: {}".format(nama, all_line(nama), ket_file(nama)))
 
 
 def split_text():
-    print(Fore.RED+"\n["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Enter Filename  (ex: daftar.txt) >")
-    nama = str(input(">> "))
-    print("\n\tWords: "+Fore.GREEN+"{}".format(ket_file(nama))+Style.RESET_ALL)
-    nama_file = open(nama, "r")
-    print(Fore.RED+"\t["+Style.RESET_ALL+"#"+Fore.RED+"]"+Style.RESET_ALL+" List Splitter(Pembagi) text "+Fore.RED+"(; : ,)"+Style.RESET_ALL)
-    print(Fore.RED+"\t["+Style.RESET_ALL+"#"+Fore.RED+"]"+Style.RESET_ALL+" Ex: [ admin;pa213ss;sada@gmail.com ]") 
-    
-    print(Fore.RED+"\n\t["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Split Type\t1.) :     2.) ,      3.) ;     4.) |     5.) #")
-    numType = int(input("\t>> "))
+    os.system("cls")
+    print(f"{gr}\n//{res}{yl} D-TERR by d4v.id{res}")
+    print(f"{gr}//{res}{yl} Splitter Text {gr}--> {yl}: , ; | #{res}")
 
-    print(Fore.RED+"\n\t["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Ex: [ admin;pa213ss;sada@gmail.com ]") 
-    print(Fore.RED+"\t["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+  "     [   0  ;   1   ;       2       ] Choose number (ex: 0): ")
-    num = int(input("\t>> "))
+    # File Input
+    print(f"{red}\n[{res}?{red}]{res} Enter Filename (.txt) >")
+    nama = str(input(f"{gr}>>{res} "))
+    nama_file = open(nama, "r")
+    print(f"{red}\n[{res}#{red}]{res} List Splitter{yl} (; : , | #) {res}")
+    print(f"{red}[{res}#{red}]{res} Ex: [ admin{yl};{res}pa213ss{yl};{res}sada@gmail.com ]") 
+    
+    # Type Input
+    print(f"{red}\n[{res}?{red}]{res} Split Type\t1.) {yl}:{res}     2.) {yl},{res}      3.) {yl};{res}     4.) {yl}|{res}     5.) {yl}#{res}")
+    numType = int(input(f"{gr}>>{res} "))
+    
+    # Select Input
+    print(f"{red}\n[{res}#{red}]{res} Ex: [ admin{yl};{res}pa213ss{yl};{res}sada@gmail.com ]") 
+    print(f"{red}[{res}?{red}]{res}     [   0  {yl};{res}   1   {yl};{res}       2       ] \nChoose number (ex: 0): ")
+    num = int(input(f"{gr}>>{res} "))
+
+    # Output Input
+    print(f"{red}\n[{res}?{red}]{res} Enter Output Filename  (.txt) >")
+    outFile = str(input(f"{gr}>>{res} "))
     
     inputType = typeSplit(numType)
     read_file = nama_file.readlines()
-    with open("hasil-text.txt", "w") as nama_file:
+    with open(outFile, "w") as nama_file:
         for line in tqdm(read_file):
-            action = line.split(inputType)
-            input_action = action
-            nama_file.write("{}\n".format(input_action[num]))
+            if inputType in line:
+                action = line.split(inputType)
+                input_action = action
+                nama_file.write("{}\n".format(input_action[num]))
+            else:
+                pass
         
-        print(Fore.GREEN+" SUCCESS SAVE "+Style.RESET_ALL+"["+Fore.GREEN+"hasil-text.txt"+Style.RESET_ALL+"]")
+        print(f"{gr} SUCCESS SAVE {res}[{gr}{outFile}{res}]")
          
 
 
-##core##
-print(Fore.GREEN+"\n//"+Style.RESET_ALL+Fore.RED+" D-TERR by d4v.id"+Style.RESET_ALL)
-type_tools = ["File Checker", "Splitter Text(: , ; | #)", "Splitter Lines"]
-print(Fore.GREEN+"//"+Style.RESET_ALL+Fore.RED+" Multiple For Splitter"+Style.RESET_ALL)
+# MAIN
+os.system("cls")
+print(f"{gr}\n//{res}{yl} D-TERR by d4v.id{res}")
+type_tools = [f"File Checker", "Splitter Text(: , ; | #)", "Splitter Lines"]
+print(f"{gr}//{res}{yl} Multiple For Splitter{res}")
 try:
-    print(Fore.RED+"["+Style.RESET_ALL+"?"+Fore.RED+"]"+Style.RESET_ALL+" Choose Methode: ")
+    print(f"{red}\n[{res}?{red}]{res} Choose Methode: ")
     print("\t(1) {}\t(2) {}\t(3). {}".format(type_tools[0], type_tools[1], type_tools[2]))
-    put_number =int(input("\t>> "))
+    put_number =int(input(f"{gr}\t>>{res} "))
     if put_number == 1:
         name_file()
     elif put_number == 2:
@@ -114,12 +148,12 @@ try:
         split_line()
 
 except ValueError:
-    print(Fore.RED+"\nFailed Input.."+Style.RESET_ALL)
+    print(f"{red}\nFailed Input..{res}")
 except FileNotFoundError:
-    print(Fore.RED+"\nFile Notfound.."+Style.RESET_ALL)
+    print(f"{red}\nFile Notfound..{res}")
 except IndexError:
-    print(Fore.RED+"\nFailed Input.."+Style.RESET_ALL)
+    print(f"{red}\nFailed Split Type / Input..{res}")
 except KeyboardInterrupt:
-    print(Fore.RED+"\nExiting..."+Style.RESET_ALL)
+    print(f"{red}\nExiting...{res}")
 
     
